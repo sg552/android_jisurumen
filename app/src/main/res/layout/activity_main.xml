@@ -23,4 +23,13 @@
         android:text="点击我跳转到第二个页面"
         tools:ignore="MissingConstraints"></Button>
 
+    <!-- 增加一个按钮 -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_blogs"
+        android:text="点击我查询远程http接口"
+        tools:ignore="MissingConstraints"></Button>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

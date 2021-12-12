@@ -29,4 +29,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    // 增加该内容
+    implementation("com.squareup.okhttp3:okhttp:4.7.2")
+
 }

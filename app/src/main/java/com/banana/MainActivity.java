@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 
 // 增加这些, 用于获取http请求
+import com.google.gson.Gson;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -70,11 +72,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
               public void onResponse(Call call, Response response) throws IOException {
                 final String result = response.body().string();
 
+                // 调用Gson解析
+                Gson gson = new Gson();
+                final BlogResult blogResult = gson.fromJson(result, BlogResult.class);
+
                 runOnUiThread(new Runnable() {
                   @Override
                   public void run() {
-                      Log.i("MainActivity", "== response: " + result);
+                    Log.i("MainActivity", "== response: " + result);
                     Intent intent = new Intent(that, ShowBlogActivity.class);
+
+                    //用Bundle携带数据
+                    Bundle bundle=new Bundle();
+                    //
+                    bundle.putString("blog_text", blogResult.result.body);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                   }
                 });

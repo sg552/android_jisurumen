@@ -30,6 +30,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // 增加该内容
-    implementation("com.squareup.okhttp3:okhttp:4.7.2")
-
+    implementation "com.squareup.okhttp3:okhttp:4.7.2"
+    implementation 'com.google.code.gson:gson:2.8.9'
 }
